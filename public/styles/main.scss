@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700|Source+Sans+Pro:300,400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap");
+@import "_variables";
+@import "_container-left";
+@import "_container-middle";
+@import "_container-right";
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+
+
+
+body {
+  background-color: $background-color;
+  font-family: $body-font;
+  -webkit-font-smoothing: antialiased;
+  color: #303030;
+
+  &.dark-mode {
+    $title-font: "DM Sans", sans-serif;
+    $primary-color: #19e2b6;
+    $secondary-color: #16e031;
+    $title-color: #c4c4c4;
+    $para-color: #7e7e7e;
+    $body-font: "Inter", sans-serif;
+    $shadow: 0px 3px 3px rgba(0, 0, 0, 0.144);
+    $background-color: #141414;
+    $background-box:#2c2c2c;
+
+    
+  }
+}
+li {
+  user-select: none;
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0px;
+  margin: 0px;
+}
+.transition-animation {
+  opacity: 0;
+}
+
+@for $i from 1 through 11 {
+  .transition-animation:nth-child(#{$i}n) {
+    animation: translate 0.5s linear;
+    animation-delay: #{$i * 0.5}s;
+    animation-fill-mode: both;
+  }
+}
+
+@keyframes translate {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+main {
+  display: flex;
+  margin: 5vh auto;
+  height: 90vh;
+  justify-content: center;
+  width: 80vw;
+}
+
+
+.border-rounded {
+  border-radius: 10px;
+}
+
+.padding-container {
+  padding: 20px;
+}
+
+.circle {
+  border-radius: 50%;
+}
